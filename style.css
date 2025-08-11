@@ -61,3 +61,89 @@ button:hover {
     flex-direction: column;
     gap: 10px;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #6a1b9a 0%, #8e24aa 100%);
+    min-height: 100vh;
+    position: relative;
+    color: #f3eaff;
+    overflow-x: hidden;
+}
+
+/* Brilhos no fundo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, #fff6 0px, #fff0 80px),
+        radial-gradient(circle at 80% 70%, #fff4 0px, #fff0 100px),
+        radial-gradient(circle at 50% 80%, #fff3 0px, #fff0 60px),
+        radial-gradient(circle at 70% 20%, #fff5 0px, #fff0 70px);
+    opacity: 0.7;
+}
+
+/* Caixa principal */
+.caixa-principal {
+    background: rgba(60, 0, 90, 0.85);
+    border-radius: 18px;
+    box-shadow: 0 0 32px 8px #a084ca55;
+    max-width: 600px;
+    margin: 48px auto;
+    padding: 32px 28px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Títulos e textos */
+h1 {
+    color: #e1bee7;
+    text-shadow: 0 2px 8px #7c43bd88;
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+}
+
+p {
+    color: #f3eaff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Botões */
+button {
+    background: linear-gradient(90deg, #8e24aa 40%, #7c43bd 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 12px #7c43bd44;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 18px;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #a084ca 40%, #8e24aa 100%);
+    transform: scale(1.05);
+}
+
+/* Ocultar caixas inicialmente */
+.caixa-perguntas,
+.caixa-alternativas,
+.caixa-resultado {
+    margin-top: 24px;
+    display: none;
+}
+
+/* Exibir quando necessário (JS deve adicionar/remover 'active') */
+.caixa-perguntas.active,
+.caixa-alternativas.active,
+.caixa-resultado.active {
+    display: block;
+}
