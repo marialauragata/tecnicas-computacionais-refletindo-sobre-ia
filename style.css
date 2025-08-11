@@ -1,66 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-:root {
-    --cor-fundo: #01080E;
-    --cor-principal: #0B0D20 ;
-    --cor-secundaria: #212333;
-    --cor-destaque: #2BDEFD;
-    --cor-texto: #D7F9FF;
-}
-  
-body {
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.caixa-principal{
-    background-color: var(--cor-principal);
-    width: 90%;
-    max-width: 600px;
-    text-align: center;
-    padding: 20px;
-}
-
-h1, .caixa-perguntas, .caixa-resultado{
-    font-family: 'Chakra Petch', sans-serif;
-}
-
-h1 {
-    color: var(--cor-destaque);
-}
-
-button {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-texto);
-    border: none;
-    border-radius: 15px;
-    padding: 15px;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: var(--cor-destaque);
-    color: var(--cor-principal);
-}
-
-.caixa-resultado{
-    display: none;
-}
-
-.caixa-resultado.mostrar{
-    display: block;
-}
-
-.caixa-alternativas{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
 
 body {
     margin: 0;
@@ -73,7 +11,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Brilhos no fundo */
+
 body::before {
     content: '';
     position: fixed;
@@ -88,7 +26,7 @@ body::before {
     opacity: 0.7;
 }
 
-/* Caixa principal */
+
 .caixa-principal {
     background: rgba(60, 0, 90, 0.85);
     border-radius: 18px;
@@ -100,7 +38,7 @@ body::before {
     z-index: 1;
 }
 
-/* Títulos e textos */
+
 h1 {
     color: #e1bee7;
     text-shadow: 0 2px 8px #7c43bd88;
@@ -114,7 +52,7 @@ p {
     line-height: 1.6;
 }
 
-/* Botões */
+
 button {
     background: linear-gradient(90deg, #8e24aa 40%, #7c43bd 100%);
     color: #fff;
@@ -133,7 +71,7 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Ocultar caixas inicialmente */
+
 .caixa-perguntas,
 .caixa-alternativas,
 .caixa-resultado {
@@ -141,7 +79,7 @@ button:hover {
     display: none;
 }
 
-/* Exibir quando necessário (JS deve adicionar/remover 'active') */
+
 .caixa-perguntas.active,
 .caixa-alternativas.active,
 .caixa-resultado.active {
